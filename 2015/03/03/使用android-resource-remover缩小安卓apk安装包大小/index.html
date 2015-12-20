@@ -59,7 +59,7 @@
 <meta property="og:description" content="在一个迭代多次的安卓产品中,apk安装包总会越来越大,其中的罪魁祸首就是无用的资源文件.但是靠手动删除显然不现实,幸好已经有开源项目帮我们做好.开源项目android-resource-remover基于ADT自带的Lint工具实现.只需要几条命令行代码,它便能帮你清除掉垃圾资源文件,使用非常简单.">
 <meta property="og:image" content="http://7wy3vb.com1.z0.glb.clouddn.com/resource_remover_1.png">
 <meta property="og:image" content="http://7wy3vb.com1.z0.glb.clouddn.com/resource_remover_2.png">
-<meta property="og:updated_time" content="2015-12-20T12:44:42.000Z">
+<meta property="og:updated_time" content="2015-12-20T13:46:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用android-resource-remover缩小安卓apk安装包大小">
 <meta name="twitter:description" content="在一个迭代多次的安卓产品中,apk安装包总会越来越大,其中的罪魁祸首就是无用的资源文件.但是靠手动删除显然不现实,幸好已经有开源项目帮我们做好.开源项目android-resource-remover基于ADT自带的Lint工具实现.只需要几条命令行代码,它便能帮你清除掉垃圾资源文件,使用非常简单.">
@@ -291,10 +291,9 @@
 
       
         <span itemprop="articleBody"><p>在一个迭代多次的安卓产品中,apk安装包总会越来越大,其中的罪魁祸首就是无用的资源文件.但是靠手动删除显然不现实,幸好已经有开源项目帮我们做好.开源项目<a href="https://github.com/KeepSafe/android-resource-remover" target="_blank" rel="external">android-resource-remover</a>基于ADT自带的Lint工具实现.只需要几条命令行代码,它便能帮你清除掉垃圾资源文件,使用非常简单.<a id="more"></a></p>
-<p>#下载并配置</p>
-<hr>
-<p>##下载并安装Python<br>登录<a href="https://www.python.org/" target="_blank" rel="external">Python官网</a>(电脑有<code>Python</code>的可以跳过这一步),点击下载,<strong>这里选择2.7.9的版本,因为3.4的版本会出错.</strong>注意选择合适自己电脑位数的版本.下载之后直接安装,一直点击下一步即可.</p>
-<p>##配置PATH环境变量<br>PATH用来配置一些程序的路径,windows系统会根据这些路径找到相应的程序.Win7右击计算机-属性-高级系统设置-高级-环境变量.建议使用用户变量,系统变量删除之后会很麻烦.选中<code>PATH</code>-编辑.一共有三个环境变量需要加上每个环境变量中间需要用<code>;</code>隔开,切记!!!.</p>
+<h1 id="u4E0B_u8F7D_u5E76_u914D_u7F6E"><a href="#u4E0B_u8F7D_u5E76_u914D_u7F6E" class="headerlink" title="下载并配置"></a>下载并配置</h1><hr>
+<h2 id="u4E0B_u8F7D_u5E76_u5B89_u88C5Python"><a href="#u4E0B_u8F7D_u5E76_u5B89_u88C5Python" class="headerlink" title="下载并安装Python"></a>下载并安装Python</h2><p>登录<a href="https://www.python.org/" target="_blank" rel="external">Python官网</a>(电脑有<code>Python</code>的可以跳过这一步),点击下载,<strong>这里选择2.7.9的版本,因为3.4的版本会出错.</strong>注意选择合适自己电脑位数的版本.下载之后直接安装,一直点击下一步即可.</p>
+<h2 id="u914D_u7F6EPATH_u73AF_u5883_u53D8_u91CF"><a href="#u914D_u7F6EPATH_u73AF_u5883_u53D8_u91CF" class="headerlink" title="配置PATH环境变量"></a>配置PATH环境变量</h2><p>PATH用来配置一些程序的路径,windows系统会根据这些路径找到相应的程序.Win7右击计算机-属性-高级系统设置-高级-环境变量.建议使用用户变量,系统变量删除之后会很麻烦.选中<code>PATH</code>-编辑.一共有三个环境变量需要加上每个环境变量中间需要用<code>;</code>隔开,切记!!!.</p>
 <ul>
 <li><strong>C:\Python27</strong><br>这是我的Python的安装地址,你需要把它换成你的.</li>
 <li><strong>C:\Python27\Scripts</strong><br>这是Python的包管理程序<code>pip.exe</code>的路径,后面要用它来安装<code>android-resource-remover</code>.同样把<code>C:\Python27</code>替换成你的<code>Python</code>所在路径.</li>
@@ -302,21 +301,17 @@
 </ul>
 <p>上述环境变量配置完之后,<code>Crtl+R</code>-输入<code>cmd</code>,打开命令行.打开之后输入<code>python</code>并回车,如果出现下图,说明你已经配置成功了.</p>
 <p><img src="http://7wy3vb.com1.z0.glb.clouddn.com/resource_remover_1.png" alt="python配置成功"></p>
-<p>#安装android-resource-remover</p>
-<hr>
+<h1 id="u5B89_u88C5android-resource-remover"><a href="#u5B89_u88C5android-resource-remover" class="headerlink" title="安装android-resource-remover"></a>安装android-resource-remover</h1><hr>
 <p>直接在CMD命令行输入:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="operator"><span class="keyword">install</span> android-<span class="keyword">resource</span>-remover</span></span><br></pre></td></tr></table></figure></p>
 <p>等待安装,如果不成功,多试几次,有可能被墙了.如果出现”pip不是内部命令…”的提示,说明上述环境变量的第2个没有正确配置,请仔细检查.<br>另外,现在的<code>Python</code>是自带<code>pip</code>的,可能有的文章会提示你先安装<code>pip</code>,不用管它.</p>
-<p>#使用android-resource-remover清除无用资源</p>
-<hr>
+<h1 id="u4F7F_u7528android-resource-remover_u6E05_u9664_u65E0_u7528_u8D44_u6E90"><a href="#u4F7F_u7528android-resource-remover_u6E05_u9664_u65E0_u7528_u8D44_u6E90" class="headerlink" title="使用android-resource-remover清除无用资源"></a>使用android-resource-remover清除无用资源</h1><hr>
 <p>在命令行中使用<code>cd</code>命令进入你的项目所在根目录,先去看一下res文件夹有多大,然后在命令行运行命令:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android-resource-remover</span><br></pre></td></tr></table></figure></p>
 <p>运行之后,如果出现以下图片,说明你成功了,快去看一下res文件夹减小了没.</p>
 <p><img src="http://7wy3vb.com1.z0.glb.clouddn.com/resource_remover_2.png" alt="运行成功"></p>
 <p>同样,如果出现”Lint不是内部或外部命令…”的提示,说明上面环境变量的第3个配置错了,请仔细检查.<br>另外需要注意的是,<strong>有些第三方服务的资源文件可能会被当作垃圾文件删掉.</strong>比如我之前使用时,就把<code>ShareSDK</code>的<code>values/ssdk_strings.xml</code>里的值给误删了,导致分享功能失效.请各位清除前做好备份,清除后检查一下第三方服务是否正常.</p>
-<p>#效果总结</p>
-<hr>
+<h1 id="u6548_u679C_u603B_u7ED3"><a href="#u6548_u679C_u603B_u7ED3" class="headerlink" title="效果总结"></a>效果总结</h1><hr>
 <p>之前公司项目的apk文件达到了14M,使用它清理之后瞬间降到了6M,效果拔群.之后使用<a href="https://tinypng.com/" target="_blank" rel="external">TinyPNG</a>将全部的.png图片压缩了一遍,apk也只是减小了1.4M而已.所以使用<code>android-resource-remover</code>清理资源文件既简单,效果也突出.</p>
-<p>#参考</p>
-<hr>
+<h1 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h1><hr>
 <p><a href="http://blog.csdn.net/mlj1668956679/article/details/38643145" target="_blank" rel="external">android-resource-remover的研究和实验</a></p>
 </span>
       
@@ -496,7 +491,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E0B_u8F7D_u5E76_u914D_u7F6E"><span class="nav-number">1.</span> <span class="nav-text">下载并配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E0B_u8F7D_u5E76_u5B89_u88C5Python"><span class="nav-number">1.1.</span> <span class="nav-text">下载并安装Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u914D_u7F6EPATH_u73AF_u5883_u53D8_u91CF"><span class="nav-number">1.2.</span> <span class="nav-text">配置PATH环境变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5B89_u88C5android-resource-remover"><span class="nav-number">2.</span> <span class="nav-text">安装android-resource-remover</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4F7F_u7528android-resource-remover_u6E05_u9664_u65E0_u7528_u8D44_u6E90"><span class="nav-number">3.</span> <span class="nav-text">使用android-resource-remover清除无用资源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6548_u679C_u603B_u7ED3"><span class="nav-number">4.</span> <span class="nav-text">效果总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u53C2_u8003"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
