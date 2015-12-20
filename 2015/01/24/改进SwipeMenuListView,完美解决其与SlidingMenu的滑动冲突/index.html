@@ -51,15 +51,25 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="尹述迪的博客">
-<meta property="og:url" content="http://yinshudi.com/index.html">
+<meta name="description" content="公司的项目同时使用了SwipeMenuListView和SlidingMenu两个开源项目,前者实现了类似手机QQ的列表左滑呼出删除菜单的功能,后者实现了应用右滑呼出应用侧滑菜单的功能.但在使用中发现了两个bug:
+
+当SwipeMenuListView的菜单打开时,右滑就会造成事件冲突,同时产生列表菜单关闭和侧滑菜单打开的效果.
+当SwipeMenuListView的菜单打开时,点击列表项仍会触">
+<meta property="og:type" content="article">
+<meta property="og:title" content="改进SwipeMenuListView,完美解决其与SlidingMenu的滑动冲突">
+<meta property="og:url" content="http://yinshudi.com/2015/01/24/改进SwipeMenuListView,完美解决其与SlidingMenu的滑动冲突/index.html">
 <meta property="og:site_name" content="尹述迪的博客">
-<meta property="og:description">
+<meta property="og:description" content="公司的项目同时使用了SwipeMenuListView和SlidingMenu两个开源项目,前者实现了类似手机QQ的列表左滑呼出删除菜单的功能,后者实现了应用右滑呼出应用侧滑菜单的功能.但在使用中发现了两个bug:
+
+当SwipeMenuListView的菜单打开时,右滑就会造成事件冲突,同时产生列表菜单关闭和侧滑菜单打开的效果.
+当SwipeMenuListView的菜单打开时,点击列表项仍会触">
+<meta property="og:updated_time" content="2015-12-20T12:42:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="尹述迪的博客">
-<meta name="twitter:description">
+<meta name="twitter:title" content="改进SwipeMenuListView,完美解决其与SlidingMenu的滑动冲突">
+<meta name="twitter:description" content="公司的项目同时使用了SwipeMenuListView和SlidingMenu两个开源项目,前者实现了类似手机QQ的列表左滑呼出删除菜单的功能,后者实现了应用右滑呼出应用侧滑菜单的功能.但在使用中发现了两个bug:
+
+当SwipeMenuListView的菜单打开时,右滑就会造成事件冲突,同时产生列表菜单关闭和侧滑菜单打开的效果.
+当SwipeMenuListView的菜单打开时,点击列表项仍会触">
 
 
 
@@ -71,7 +81,7 @@
   };
 </script>
 
-  <title> 尹述迪的博客 </title>
+  <title> 改进SwipeMenuListView,完美解决其与SlidingMenu的滑动冲突 | 尹述迪的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -102,9 +112,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -222,24 +230,9 @@
       <div class="main-inner">
         <div id="content" class="content">
           
-  <section id="posts" class="posts-expand">
 
+  <div id="posts" class="posts-expand">
     
-
-    
-    
-      
-      
-        
-        
-        
-      
-
-      
-    
-
-    
-      
 
   
   
@@ -259,344 +252,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2015/12/15/Mac中Terminal基础命令不可用的解决方案/" itemprop="url">
-                  Mac中Terminal基础命令不可用(如ls command not found)的解决方案
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-12-15T18:25:36+08:00" content="2015-12-15">
-              2015-12-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/15/Mac中Terminal基础命令不可用的解决方案/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/15/Mac中Terminal基础命令不可用的解决方案/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>今天准备开始系统学习Mac命令行的使用,但一打开发现所有命令都无法使用了,连最基础的<code>ls</code>,<code>touch</code>都不行,非常奇怪,以前一直使用正常,并且我也没有更新系统.在网上找到的解决方案如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin</span><br></pre></td></tr></table></figure></p>
-<p>试了一下,果然有用,但蛋疼的是此命令是一次性的,每次重启Terminal都需要重新输入一次.这时发现上面的命令在之前配置adb的环境变量时用过.猜想将这些路径配置到 <code>.bash_profile</code>就能持久性保存了.然后我重新输入上面的命令,然后在home目录下(可通过命令<code>cd ~</code>回到home)输入以下命令打开<code>.bash_profile</code>文件:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch .bash_profile #&#27809;&#26377;.bash_profile&#25991;&#20214;&#26102;&#20250;&#20026;&#20320;&#21019;&#24314;&#10;open .bash_profile #&#25171;&#24320;.bash_profile&#25991;&#20214;</span><br></pre></td></tr></table></figure></p>
-<p>打开之后,如果文件是空的,那么将export那行命令复制进去保存即可,如果以前配置过,那么将那行命令等号右边的路径粘贴到文件中的等号右边即可.注意路径与路径中间要用冒号<code>:</code>隔开.然后保存.<br>保存之后不会立刻生效,需要重启Terminal或者输入以下命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .bash_profile</span><br></pre></td></tr></table></figure></p>
-<p>修复了之后想知道具体的原因是什么,就去查了一下<code>.bash_profile</code>这个文件.<br>原来Unix系统下的环境变量由以下三个文件获得:</p>
-<ol>
-<li><code>/etc/profile</code> 系统全局变量</li>
-<li><code>/etc/bashrc</code> 系统配置文件</li>
-<li><code>~/.bash_profile</code> 用户的配置文件,~代码home目录</li>
-</ol>
-<p>前两个是系统级的文件,对所有用户生效,普通用户只可读,修改需要获取root权限.<code>.bash_profile</code>是每个用户的配置文件,并且,<strong><code>,bash_profile</code>中的内容会覆盖<code>profile</code>中的内容</strong>.<br>这也就是我的命令行突然无法使用的原因.在配置adb的环境变量时,由于没有<code>.bash_profile</code>文件,我便创建了一个.这时便将系统命令的环境变量覆盖了.<br>另外,可以用<code>${PATH}</code>来表示系统的环境变量,它里面包含的路径有:<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/<span class="keyword">bin</span><br><span class="line"></span>/usr/<span class="keyword">bin</span><br><span class="line"></span>/<span class="keyword">bin</span><br><span class="line"></span>/usr/sbin</span><br><span class="line">/sbin</span><br></pre></td></tr></table></figure></p>
-<p>这些内容可以在<code>/etc/paths</code>文件中查看到.</p>
-<p>#参考</p>
-<ul>
-<li><a href="http://yijiebuyi.com/blog/f2f8317f69a857b2b82ff9973031468e.html" target="_blank" rel="external">mac 如何设置全局变量$PATH</a></li>
-<li><a href="http://stackoverflow.com/questions/6751252/difference-between-profile-and-bash-profile-on-snow-leopard" target="_blank" rel="external">Difference between .profile and .bash_profile</a></li>
-</ul>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/10/AsyncTask使用中的那些坑/" itemprop="url">
-                  AsyncTask使用中的那些坑
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-12-10T20:47:12+08:00" content="2015-12-10">
-              2015-12-10
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/10/AsyncTask使用中的那些坑/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/10/AsyncTask使用中的那些坑/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>公司目前的项目是个二次开发的项目,加上我接手时项目开发只有我和另外一个实习生,一切都需要自己摸索,导致项目中出现了很多历史遗留问题.好在经过不断的优化,现在的项目已经趋于稳定.早期项目的崩溃率非常高,好在大部分崩溃能在框架中统一处理.比如AsyncTask.下面总结一下AsyncTask中常见的坑:</p>
-<p>#AsyncTask的<code>cancel()</code>方法无法直接停止子线程</p>
-<pre><code>这是一个具有迷惑性的方法.在`cancel()`方法中,`AsyncTask`调用了FutureTask的`cancel()`方法,这里面又调用了子线程的`interrupt()`方法.但是,interrupt()方法不会直接终止线程,而只会更改一个标志位,表示有中断请求,需要用户在线程中在合适的地方自己判断是否有中断请求并作出相应的处理.不过很遗憾,AsyncTask的源码并没有判断子线程的中断状态,因此,`cancel()`只能阻止`onPostExecute()`方法的回调,而不会对子线程做任何处理.当初看到这里时,我曾有个疑惑,为什么不直接使用Thread的`stop()`方法呢,不就不用进行任何判断了么,但实际上,`stop()`方法已经被禁用了.因为`stop()`方法对线程的粗暴停止会产生很多问题.关于Java线程中断机制的具体分析请看[这篇文章](http://www.infoq.com/cn/articles/java-interrupt-mechanism).
-</code></pre><p>#回调<code>onPostExecute()</code>方法时Activity已被销毁<br>   这是最常见的.在AsyncTask回调<code>onPostExecute()</code>时,所在Activity或Fragment可能已经销毁,导致Context和所有View对象都为空.此时临时的处理方法有两种,一是在使用前进行判空,二是在生命周期方法中,调用<code>cancel()</code>方法,虽然<code>cancel()</code>不能直接停止<code>doInBackground()</code>,但cancel后不会再回调<code>onPostExcute()</code>方法.<br>但一个个地处理太繁琐,而且容易忘,我采用的方法是新建一个继承自AsyncTask的类<code>BaseAsyncTask</code>,在其中重写<code>onPostExecute()</code>方法,在重写的方法中对Activity或Fragment统一进行判空.代码如下:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public abstract class <span class="type">BaseAsyncTask</span>&lt;<span class="type">Params</span>, <span class="type">Progress</span>, <span class="type">Result</span>&gt; extends <span class="type">AsyncTask</span>&lt;<span class="type">Params</span>, <span class="type">Progress</span>, <span class="type">Result</span>&gt;&#123;</span><br><span class="line">	protected <span class="type">WeakReference</span>&lt;<span class="type">BaseFragment</span>&gt; mReference = null;</span><br><span class="line">	//判断所在<span class="type">Activity</span>已被销毁时是否停止任务</span><br><span class="line">	private boolean mIsStopWhenFragmentDestroy;</span><br><span class="line"></span><br><span class="line">    public <span class="type">BaseAsyncTask</span>()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	public <span class="type">BaseAsyncTask</span>(<span class="type">BaseFragment</span> fragment)&#123;</span><br><span class="line">		<span class="keyword">if</span>(fragment != null) &#123;</span><br><span class="line">            mIsStopWhenFragmentDestroy = <span class="literal">true</span>;</span><br><span class="line">			this.mReference = new <span class="type">WeakReference</span>&lt;&gt;(fragment);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	@<span class="type">Override</span></span><br><span class="line">	final protected <span class="type">void</span> onPostExecute(<span class="type">Result</span> <span class="literal">result</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span>(mIsStopWhenFragmentDestroy)&#123;</span><br><span class="line">			<span class="keyword">if</span> (mReference == null || mReference.get() == null </span><br><span class="line">					|| !mReference.get().isAdded()</span><br><span class="line">					|| mReference.get().getActivity().isFinishing()) &#123;</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		onPostExecuteAfterCheck(<span class="literal">result</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	protected <span class="type">void</span> onPostExecuteAfterCheck(<span class="type">Result</span> <span class="literal">result</span>)&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上代码中<code>onPostExcute()</code>方法置为<code>final</code>,防止重写.所有调用者统一重写经过检查后调用的<code>onPostExecuteAfterCheck()</code>方法.同时,考虑到有时需求希望Activity方法被销毁后<code>onPostExecuteAfterCheck()</code>方法仍被回调,因此加了标志位<code>mIsStopWhenFragmentDestroy</code>.另外,由于Handler极易引发内存泄露,因此此处使用弱引用.</p>
-<p>#AsyncTask的阻塞问题<br>这真的是一个大坑.Android3.0之后AsyncTask从使用容量为5的线程池变为使用单线程.也就是说,AsyncTask程是全局阻塞的.必须要等上一个AsyncTask执行完了,下一个才会开始执行.项目初期,由于项目的并发性要求不高,并且异步任务耗时都比较短,也就没有在意这个问题.直到有一天晚上出包之前,突然出现很多以前从未遇到的bug(是的,bug总是在出包前夜才出现),排查后发现基本都是AsyncTask没执行的问题,当时项目刚引了一个AR的jar包,因此我猜想可能是jar包中的方法占用了AsyncTask的线程资源,导致自己的AsyncTask全部没执行.<br>这个问题其实也很好解决,在执行AsyncTask的时候不要调用<code>execute()</code>方法,统一调用<code>executeOnExecutor()</code>方法,并传入一个线程池,这个线程池就由你自己控制了,使用起来非常灵活,这也是Android将AsyncTask改为单任务机制的原因.</p>
-<p>#参考</p>
-<ul>
-<li><a href="http://www.infoq.com/cn/articles/java-interrupt-mechanism" target="_blank" rel="external">详细分析Java中断机制</a></li>
-<li><a href="http://blog.csdn.net/guolin_blog/article/details/11711405" target="_blank" rel="external">Android AsyncTask完全解析，带你从源码的角度彻底理解</a></li>
-</ul>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/03/03/使用android-resource-remover缩小安卓apk安装包大小/" itemprop="url">
-                  使用android-resource-remover缩小安卓apk安装包大小
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-03-03T19:12:00+08:00" content="2015-03-03">
-              2015-03-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/03/03/使用android-resource-remover缩小安卓apk安装包大小/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/03/使用android-resource-remover缩小安卓apk安装包大小/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>在一个迭代多次的安卓产品中,apk安装包总会越来越大,其中的罪魁祸首就是无用的资源文件.但是靠手动删除显然不现实,幸好已经有开源项目帮我们做好.开源项目<a href="https://github.com/KeepSafe/android-resource-remover">android-resource-remover</a>基于ADT自带的Lint工具实现.只需要几条命令行代码,它便能帮你清除掉垃圾资源文件,使用非常简单.
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/03/03/使用android-resource-remover缩小安卓apk安装包大小/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/01/24/改进SwipeMenuListView,完美解决其与SlidingMenu的滑动冲突/" itemprop="url">
-                  改进SwipeMenuListView,完美解决其与SlidingMenu的滑动冲突
-                </a>
+                改进SwipeMenuListView,完美解决其与SlidingMenu的滑动冲突
               
             
           </h1>
@@ -651,10 +307,7 @@
       
 
       
-        
-          <span itemprop="articleBody">
-            
-              <hr>
+        <span itemprop="articleBody"><hr>
 <p>公司的项目同时使用了<a href="https://github.com/baoyongzhang/SwipeMenuListView" target="_blank" rel="external">SwipeMenuListView</a>和<a href="https://github.com/jfeinstein10/SlidingMenu" target="_blank" rel="external">SlidingMenu</a>两个开源项目,前者实现了类似手机QQ的列表左滑呼出删除菜单的功能,后者实现了应用右滑呼出应用侧滑菜单的功能.但在使用中发现了两个bug:</p>
 <ul>
 <li>当SwipeMenuListView的菜单打开时,右滑就会造成事件冲突,同时产生列表菜单关闭和侧滑菜单打开的效果.</li>
@@ -666,10 +319,7 @@
 <p>这样就解决了SwipeMenu和SlidingMenu的冲突问题.<br>接着,当item被点击时,如果菜单是打开的,先将其关闭.在<code>SwipeMenuListView</code>中重写<code>setOnItemClickListener()</code>方法,代码如下:<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">setOnItemClickListener</span><span class="params">(<span class="keyword">final</span> OnItemClickListener listener)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.setOnItemClickListener(<span class="keyword">new</span> OnItemClickListener() &#123;</span><br><span class="line">		<span class="annotation">@Override</span></span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view,<span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(mTouchView != <span class="keyword">null</span> &amp;&amp; mTouchView.isOpen())&#123;	<span class="comment">//如果菜单打开,将其关闭;</span></span><br><span class="line">				mTouchView.smoothCloseMenu();</span><br><span class="line">				mTouchView = <span class="keyword">null</span>;</span><br><span class="line">				mOnSwipeListener.onMenuClose(mTouchPosition);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;   <span class="comment">//如果菜单是关闭状态,执行使用者重写的回调方法</span></span><br><span class="line">				listener.onItemClick(parent,view,position,id);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这样修改之后,使用者正常地设置item的点击事件即可.</p>
 <p>改进之后的代码放在我的github上了,源码在此,<a href="https://github.com/yinshudi/SwipeMenuListView" target="_blank" rel="external">SwipeMenuListView</a>,欢迎使用.</p>
-
-            
-          </span>
-        
+</span>
       
     </div>
 
@@ -677,20 +327,32 @@
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/03/03/使用android-resource-remover缩小安卓apk安装包大小/" rel="prev" title="使用android-resource-remover缩小安卓apk安装包大小">
+                使用android-resource-remover缩小安卓apk安装包大小 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
 
-  </section>
-
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
         </div>
@@ -699,6 +361,14 @@
 
 
         
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/01/24/改进SwipeMenuListView,完美解决其与SlidingMenu的滑动冲突/"
+           data-title="改进SwipeMenuListView,完美解决其与SlidingMenu的滑动冲突" data-url="http://yinshudi.com/2015/01/24/改进SwipeMenuListView,完美解决其与SlidingMenu的滑动冲突/">
+      </div>
+    
+  </div>
+
 
       </div>
 
@@ -719,8 +389,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" src="/images/default_avatar.jpg" alt="尹述迪" itemprop="image"/>
           <p class="site-author-name" itemprop="name">尹述迪</p>
@@ -804,6 +483,23 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目錄</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -891,6 +587,167 @@
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   <script type="text/javascript" src="/js/bootstrap.js"></script>
 
