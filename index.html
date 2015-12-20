@@ -51,15 +51,15 @@
 
 
 
-<meta name="description">
+<meta name="description" content="即使到此为止,我与世界已是交浅言深">
 <meta property="og:type" content="website">
 <meta property="og:title" content="尹述迪的博客">
 <meta property="og:url" content="http://yinshudi.com/index.html">
 <meta property="og:site_name" content="尹述迪的博客">
-<meta property="og:description">
+<meta property="og:description" content="即使到此为止,我与世界已是交浅言深">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="尹述迪的博客">
-<meta name="twitter:description">
+<meta name="twitter:description" content="即使到此为止,我与世界已是交浅言深">
 
 
 
@@ -74,7 +74,7 @@
   <title> 尹述迪的博客 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
@@ -141,7 +141,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首頁
+            首页
           </a>
         </li>
       
@@ -151,7 +151,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            分類
+            分类
           </a>
         </li>
       
@@ -161,7 +161,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            關於
+            关于
           </a>
         </li>
       
@@ -171,17 +171,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            歸檔
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
-            
-            標籤
+            归档
           </a>
         </li>
       
@@ -228,15 +218,6 @@
 
     
     
-      
-      
-        
-        
-        
-      
-
-      
-    
 
     
       
@@ -270,7 +251,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            發表於
+            发表于
             <time itemprop="dateCreated" datetime="2015-12-15T18:25:36+08:00" content="2015-12-15">
               2015-12-15
             </time>
@@ -278,7 +259,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Mac/" itemprop="url" rel="index">
@@ -320,25 +301,14 @@
         
           <span itemprop="articleBody">
             
-              <p>今天准备开始系统学习Mac命令行的使用,但一打开发现所有命令都无法使用了,连最基础的<code>ls</code>,<code>touch</code>都不行,非常奇怪,以前一直使用正常,并且我也没有更新系统.在网上找到的解决方案如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin</span><br></pre></td></tr></table></figure></p>
-<p>试了一下,果然有用,但蛋疼的是此命令是一次性的,每次重启Terminal都需要重新输入一次.这时发现上面的命令在之前配置adb的环境变量时用过.猜想将这些路径配置到 <code>.bash_profile</code>就能持久性保存了.然后我重新输入上面的命令,然后在home目录下(可通过命令<code>cd ~</code>回到home)输入以下命令打开<code>.bash_profile</code>文件:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch .bash_profile #&#27809;&#26377;.bash_profile&#25991;&#20214;&#26102;&#20250;&#20026;&#20320;&#21019;&#24314;&#10;open .bash_profile #&#25171;&#24320;.bash_profile&#25991;&#20214;</span><br></pre></td></tr></table></figure></p>
-<p>打开之后,如果文件是空的,那么将export那行命令复制进去保存即可,如果以前配置过,那么将那行命令等号右边的路径粘贴到文件中的等号右边即可.注意路径与路径中间要用冒号<code>:</code>隔开.然后保存.<br>保存之后不会立刻生效,需要重启Terminal或者输入以下命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .bash_profile</span><br></pre></td></tr></table></figure></p>
-<p>修复了之后想知道具体的原因是什么,就去查了一下<code>.bash_profile</code>这个文件.<br>原来Unix系统下的环境变量由以下三个文件获得:</p>
-<ol>
-<li><code>/etc/profile</code> 系统全局变量</li>
-<li><code>/etc/bashrc</code> 系统配置文件</li>
-<li><code>~/.bash_profile</code> 用户的配置文件,~代码home目录</li>
-</ol>
-<p>前两个是系统级的文件,对所有用户生效,普通用户只可读,修改需要获取root权限.<code>.bash_profile</code>是每个用户的配置文件,并且,<strong><code>,bash_profile</code>中的内容会覆盖<code>profile</code>中的内容</strong>.<br>这也就是我的命令行突然无法使用的原因.在配置adb的环境变量时,由于没有<code>.bash_profile</code>文件,我便创建了一个.这时便将系统命令的环境变量覆盖了.<br>另外,可以用<code>${PATH}</code>来表示系统的环境变量,它里面包含的路径有:<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/<span class="keyword">bin</span><br><span class="line"></span>/usr/<span class="keyword">bin</span><br><span class="line"></span>/<span class="keyword">bin</span><br><span class="line"></span>/usr/sbin</span><br><span class="line">/sbin</span><br></pre></td></tr></table></figure></p>
-<p>这些内容可以在<code>/etc/paths</code>文件中查看到.</p>
-<p>#参考</p>
-<ul>
-<li><a href="http://yijiebuyi.com/blog/f2f8317f69a857b2b82ff9973031468e.html" target="_blank" rel="external">mac 如何设置全局变量$PATH</a></li>
-<li><a href="http://stackoverflow.com/questions/6751252/difference-between-profile-and-bash-profile-on-snow-leopard" target="_blank" rel="external">Difference between .profile and .bash_profile</a></li>
-</ul>
-
-            
+            今天准备开始系统学习Mac命令行的使用,但一打开发现所有命令都无法使用了,连最基础的ls,touch都不行,非常奇怪,以前一直使用正常,并且我也没有更新系统.在网上找到的解决方案如下:1export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/us
+            ...
           </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/12/15/Mac中Terminal基础命令不可用的解决方案/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -388,7 +358,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            發表於
+            发表于
             <time itemprop="dateCreated" datetime="2015-12-10T20:47:12+08:00" content="2015-12-10">
               2015-12-10
             </time>
@@ -396,7 +366,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index">
@@ -438,20 +408,14 @@
         
           <span itemprop="articleBody">
             
-              <p>公司目前的项目是个二次开发的项目,加上我接手时项目开发只有我和另外一个实习生,一切都需要自己摸索,导致项目中出现了很多历史遗留问题.好在经过不断的优化,现在的项目已经趋于稳定.早期项目的崩溃率非常高,好在大部分崩溃能在框架中统一处理.比如AsyncTask.下面总结一下AsyncTask中常见的坑:</p>
-<p>#AsyncTask的<code>cancel()</code>方法无法直接停止子线程</p>
-<pre><code>这是一个具有迷惑性的方法.在`cancel()`方法中,`AsyncTask`调用了FutureTask的`cancel()`方法,这里面又调用了子线程的`interrupt()`方法.但是,interrupt()方法不会直接终止线程,而只会更改一个标志位,表示有中断请求,需要用户在线程中在合适的地方自己判断是否有中断请求并作出相应的处理.不过很遗憾,AsyncTask的源码并没有判断子线程的中断状态,因此,`cancel()`只能阻止`onPostExecute()`方法的回调,而不会对子线程做任何处理.当初看到这里时,我曾有个疑惑,为什么不直接使用Thread的`stop()`方法呢,不就不用进行任何判断了么,但实际上,`stop()`方法已经被禁用了.因为`stop()`方法对线程的粗暴停止会产生很多问题.关于Java线程中断机制的具体分析请看[这篇文章](http://www.infoq.com/cn/articles/java-interrupt-mechanism).
-</code></pre><p>#回调<code>onPostExecute()</code>方法时Activity已被销毁<br>   这是最常见的.在AsyncTask回调<code>onPostExecute()</code>时,所在Activity或Fragment可能已经销毁,导致Context和所有View对象都为空.此时临时的处理方法有两种,一是在使用前进行判空,二是在生命周期方法中,调用<code>cancel()</code>方法,虽然<code>cancel()</code>不能直接停止<code>doInBackground()</code>,但cancel后不会再回调<code>onPostExcute()</code>方法.<br>但一个个地处理太繁琐,而且容易忘,我采用的方法是新建一个继承自AsyncTask的类<code>BaseAsyncTask</code>,在其中重写<code>onPostExecute()</code>方法,在重写的方法中对Activity或Fragment统一进行判空.代码如下:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public abstract class <span class="type">BaseAsyncTask</span>&lt;<span class="type">Params</span>, <span class="type">Progress</span>, <span class="type">Result</span>&gt; extends <span class="type">AsyncTask</span>&lt;<span class="type">Params</span>, <span class="type">Progress</span>, <span class="type">Result</span>&gt;&#123;</span><br><span class="line">	protected <span class="type">WeakReference</span>&lt;<span class="type">BaseFragment</span>&gt; mReference = null;</span><br><span class="line">	//判断所在<span class="type">Activity</span>已被销毁时是否停止任务</span><br><span class="line">	private boolean mIsStopWhenFragmentDestroy;</span><br><span class="line"></span><br><span class="line">    public <span class="type">BaseAsyncTask</span>()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	public <span class="type">BaseAsyncTask</span>(<span class="type">BaseFragment</span> fragment)&#123;</span><br><span class="line">		<span class="keyword">if</span>(fragment != null) &#123;</span><br><span class="line">            mIsStopWhenFragmentDestroy = <span class="literal">true</span>;</span><br><span class="line">			this.mReference = new <span class="type">WeakReference</span>&lt;&gt;(fragment);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	@<span class="type">Override</span></span><br><span class="line">	final protected <span class="type">void</span> onPostExecute(<span class="type">Result</span> <span class="literal">result</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span>(mIsStopWhenFragmentDestroy)&#123;</span><br><span class="line">			<span class="keyword">if</span> (mReference == null || mReference.get() == null </span><br><span class="line">					|| !mReference.get().isAdded()</span><br><span class="line">					|| mReference.get().getActivity().isFinishing()) &#123;</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		onPostExecuteAfterCheck(<span class="literal">result</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	protected <span class="type">void</span> onPostExecuteAfterCheck(<span class="type">Result</span> <span class="literal">result</span>)&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上代码中<code>onPostExcute()</code>方法置为<code>final</code>,防止重写.所有调用者统一重写经过检查后调用的<code>onPostExecuteAfterCheck()</code>方法.同时,考虑到有时需求希望Activity方法被销毁后<code>onPostExecuteAfterCheck()</code>方法仍被回调,因此加了标志位<code>mIsStopWhenFragmentDestroy</code>.另外,由于Handler极易引发内存泄露,因此此处使用弱引用.</p>
-<p>#AsyncTask的阻塞问题<br>这真的是一个大坑.Android3.0之后AsyncTask从使用容量为5的线程池变为使用单线程.也就是说,AsyncTask程是全局阻塞的.必须要等上一个AsyncTask执行完了,下一个才会开始执行.项目初期,由于项目的并发性要求不高,并且异步任务耗时都比较短,也就没有在意这个问题.直到有一天晚上出包之前,突然出现很多以前从未遇到的bug(是的,bug总是在出包前夜才出现),排查后发现基本都是AsyncTask没执行的问题,当时项目刚引了一个AR的jar包,因此我猜想可能是jar包中的方法占用了AsyncTask的线程资源,导致自己的AsyncTask全部没执行.<br>这个问题其实也很好解决,在执行AsyncTask的时候不要调用<code>execute()</code>方法,统一调用<code>executeOnExecutor()</code>方法,并传入一个线程池,这个线程池就由你自己控制了,使用起来非常灵活,这也是Android将AsyncTask改为单任务机制的原因.</p>
-<p>#参考</p>
-<ul>
-<li><a href="http://www.infoq.com/cn/articles/java-interrupt-mechanism" target="_blank" rel="external">详细分析Java中断机制</a></li>
-<li><a href="http://blog.csdn.net/guolin_blog/article/details/11711405" target="_blank" rel="external">Android AsyncTask完全解析，带你从源码的角度彻底理解</a></li>
-</ul>
-
-            
+            公司目前的项目是个二次开发的项目,加上我接手时项目开发只有我和另外一个实习生,一切都需要自己摸索,导致项目中出现了很多历史遗留问题.好在经过不断的优化,现在的项目已经趋于稳定.早期项目的崩溃率非常高,好在大部分崩溃能在框架中统一处理.比如AsyncTask.下面总结一下AsyncTask中常见的坑:
+            ...
           </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/12/10/AsyncTask使用中的那些坑/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -501,7 +465,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            發表於
+            发表于
             <time itemprop="dateCreated" datetime="2015-03-03T19:12:00+08:00" content="2015-03-03">
               2015-03-03
             </time>
@@ -509,7 +473,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index">
@@ -552,7 +516,7 @@
           <p>在一个迭代多次的安卓产品中,apk安装包总会越来越大,其中的罪魁祸首就是无用的资源文件.但是靠手动删除显然不现实,幸好已经有开源项目帮我们做好.开源项目<a href="https://github.com/KeepSafe/android-resource-remover">android-resource-remover</a>基于ADT自带的Lint工具实现.只需要几条命令行代码,它便能帮你清除掉垃圾资源文件,使用非常简单.
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/03/03/使用android-resource-remover缩小安卓apk安装包大小/#more" rel="contents">
-              閱讀全文 &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
         
@@ -604,7 +568,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            發表於
+            发表于
             <time itemprop="dateCreated" datetime="2015-01-24T17:25:12+08:00" content="2015-01-24">
               2015-01-24
             </time>
@@ -612,7 +576,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index">
@@ -654,21 +618,17 @@
         
           <span itemprop="articleBody">
             
-              <hr>
-<p>公司的项目同时使用了<a href="https://github.com/baoyongzhang/SwipeMenuListView" target="_blank" rel="external">SwipeMenuListView</a>和<a href="https://github.com/jfeinstein10/SlidingMenu" target="_blank" rel="external">SlidingMenu</a>两个开源项目,前者实现了类似手机QQ的列表左滑呼出删除菜单的功能,后者实现了应用右滑呼出应用侧滑菜单的功能.但在使用中发现了两个bug:</p>
-<ul>
-<li>当SwipeMenuListView的菜单打开时,右滑就会造成事件冲突,同时产生列表菜单关闭和侧滑菜单打开的效果.</li>
-<li>当SwipeMenuListView的菜单打开时,点击列表项仍会触发<code>onItemClick()</code>方法,我需要的效果是点击列表项时,先关闭列表菜单.</li>
-</ul>
-<p>为了便于区分,后文将列表菜单叫做SwipeMenu,侧滑菜单叫做SlidingMenu.<br>首先,我们来看一看源码,打开<code>SwipeMenuListView</code>文件:<br>在最后两行可以看到,作者开放了两个监听方法,<code>onSwipeStart(int position)</code>和<code>onSwipeEnd(int position)</code>,经过测试发现,SwipeMenu在关闭状态下,开始和结束滑动会回调这两个方法,但是,SwipeMenu在打开状态下并不会回调这两个方法.因此,解决方案就是在源码中增加两个方法,用于监听SwipeMenu的打开和关闭事件.<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">interface</span> <span class="title">OnSwipeListener</span> &#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">onSwipeStart</span>(<span class="params"><span class="keyword">int</span> position</span>)</span>;    <span class="comment">// start swipe </span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">onSwipeEnd</span>(<span class="params"><span class="keyword">int</span> position</span>)</span>;      <span class="comment">//end swipe</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">onMenuOpen</span>(<span class="params"><span class="keyword">int</span> position</span>)</span>;      <span class="comment">//菜单被打开时的回调方法</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">onMenuClose</span>(<span class="params"><span class="keyword">int</span> position</span>)</span>;      <span class="comment">//菜单被关闭时的回调方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后来分析一下<code>onTouchEvent</code>方法,挑重要的看:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">	<span class="annotation">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">switch</span> (action) &#123;</span><br><span class="line">		<span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">		</span><br><span class="line">		...</span><br><span class="line">		</span><br><span class="line">		    <span class="comment">//这里当菜单打开时,只要按下去就直接将其关闭了.不是我想要的效果,直接注释掉.</span></span><br><span class="line">		    <span class="comment">//edit start</span></span><br><span class="line"><span class="comment">// 			if (mTouchView != null &amp;&amp; mTouchView.isOpen()) &#123;</span></span><br><span class="line"><span class="comment">// 				mTouchView.smoothCloseMenu();</span></span><br><span class="line"><span class="comment">//				mTouchView = null;</span></span><br><span class="line"><span class="comment">// 				return super.onTouchEvent(ev);</span></span><br><span class="line"><span class="comment">// 			&#125;</span></span><br><span class="line">            <span class="comment">//edit end</span></span><br><span class="line">		...</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">case</span> MotionEvent.ACTION_UP:</span><br><span class="line">			<span class="keyword">if</span> (mTouchState == TOUCH_STATE_X) &#123; </span><br><span class="line">				<span class="keyword">if</span> (mTouchView != <span class="keyword">null</span>) &#123;</span><br><span class="line">					mTouchView.onSwipe(ev);</span><br><span class="line">					<span class="comment">//修改这里的代码,当横向滑动的动作发生时,判断菜单是否打开,并执行对应的回调方法</span></span><br><span class="line">					<span class="comment">//edit start</span></span><br><span class="line"><span class="comment">//			    	if (!mTouchView.isOpen()) &#123;</span></span><br><span class="line"><span class="comment">//			    	    mTouchPosition = -1;</span></span><br><span class="line"><span class="comment">//						mTouchView = null;</span></span><br><span class="line"><span class="comment">//					&#125;</span></span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(mTouchView.isOpen())&#123;</span><br><span class="line">						mOnSwipeListener.onMenuOpen(mTouchPosition);</span><br><span class="line">					&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">						mOnSwipeListener.onMenuClose(mTouchPosition);</span><br><span class="line">						mTouchPosition = -<span class="number">1</span>;</span><br><span class="line">						mTouchView = <span class="keyword">null</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="comment">//edit end</span></span><br><span class="line">				&#125;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后,在使用到此ListView的界面中设置监听:<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">      <span class="comment">// set SwipeListener</span></span><br><span class="line">listView.setOnSwipeListener(<span class="keyword">new</span> OnSwipeListener() &#123;</span><br><span class="line">	<span class="annotation">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onSwipeStart</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="annotation">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onSwipeEnd</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="annotation">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onMenuOpen</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">	    <span class="comment">//SwipeMenu打开时,将SlidingMenu设为不可用,注意,此处调用setEnable(false)是无效的.具体原因我也不清楚.</span></span><br><span class="line">		slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);  </span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="annotation">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onMenuClose</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">    	<span class="comment">//SwipeMenu关闭时,将SlidingMenu设为可用</span></span><br><span class="line">		slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>这样就解决了SwipeMenu和SlidingMenu的冲突问题.<br>接着,当item被点击时,如果菜单是打开的,先将其关闭.在<code>SwipeMenuListView</code>中重写<code>setOnItemClickListener()</code>方法,代码如下:<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">setOnItemClickListener</span><span class="params">(<span class="keyword">final</span> OnItemClickListener listener)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.setOnItemClickListener(<span class="keyword">new</span> OnItemClickListener() &#123;</span><br><span class="line">		<span class="annotation">@Override</span></span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view,<span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(mTouchView != <span class="keyword">null</span> &amp;&amp; mTouchView.isOpen())&#123;	<span class="comment">//如果菜单打开,将其关闭;</span></span><br><span class="line">				mTouchView.smoothCloseMenu();</span><br><span class="line">				mTouchView = <span class="keyword">null</span>;</span><br><span class="line">				mOnSwipeListener.onMenuClose(mTouchPosition);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;   <span class="comment">//如果菜单是关闭状态,执行使用者重写的回调方法</span></span><br><span class="line">				listener.onItemClick(parent,view,position,id);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样修改之后,使用者正常地设置item的点击事件即可.</p>
-<p>改进之后的代码放在我的github上了,源码在此,<a href="https://github.com/yinshudi/SwipeMenuListView" target="_blank" rel="external">SwipeMenuListView</a>,欢迎使用.</p>
-
             
+公司的项目同时使用了SwipeMenuListView和SlidingMenu两个开源项目,前者实现了类似手机QQ的列表左滑呼出删除菜单的功能,后者实现了应用右滑呼出应用侧滑菜单的功能.但在使用中发现了两个bug:
+
+当SwipeMenuListView的菜单打开时,右滑就会造成事件冲突,同时产生
+            ...
           </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/01/24/改进SwipeMenuListView,完美解决其与SlidingMenu的滑动冲突/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -722,30 +682,30 @@
 
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="尹述迪" itemprop="image"/>
+          <img class="site-author-image" src="http://img31.mtime.cn/mg/2013/10/20/222313.49306423.jpg" alt="尹述迪" itemprop="image"/>
           <p class="site-author-name" itemprop="name">尹述迪</p>
         </div>
-        <p class="site-description motion-element" itemprop="description"></p>
+        <p class="site-description motion-element" itemprop="description">即使到此为止,我与世界已是交浅言深</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">4</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
               <span class="site-state-item-count">2</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
-            <a href="/tags">
+            
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">標籤</span>
-              </a>
+              <span class="site-state-item-name">标签</span>
+              
           </div>
 
         </nav>
@@ -826,11 +786,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
