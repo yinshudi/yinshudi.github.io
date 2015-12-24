@@ -51,19 +51,21 @@
 
 
 
-<meta name="description" content="今天准备开始系统学习Mac命令行的使用,但一打开发现所有命令都无法使用了,连最基础的ls,touch都不行,非常奇怪,以前一直使用正常,并且我也没有更新系统.在网上找到的解决方案如下:1export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
-试了一下,果然有用,但蛋疼的是此命令是一次性的,">
+<meta name="description" content="由于没有喜欢的主题,最近决定将博客由Farbox平台重新转回Hexo,第一次搭建Hexo时是在Windows环境下,版本是2.0+.现在转到Mac,Hexo也升级到了3.0+.因此也遇到了一些问题,在此纪录一下.
+按照Hexo文档的建议,我使用nvm来下载Node.js.下载nvm时,Hexo文档给出的下载nvm的命令在我的电脑上不管用,我使用的是nvm文档中的命令:1curl -o- https">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac中Terminal基础命令不可用(如ls command not found)的解决方案">
-<meta property="og:url" content="http://yinshudi.com/2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/index.html">
+<meta property="og:title" content="Hexo搭建过程中Node.js的环境问题">
+<meta property="og:url" content="http://yinshudi.com/2015/12/22/Hexo搭建过程中Node.js的环境问题/index.html">
 <meta property="og:site_name" content="尹述迪的博客">
-<meta property="og:description" content="今天准备开始系统学习Mac命令行的使用,但一打开发现所有命令都无法使用了,连最基础的ls,touch都不行,非常奇怪,以前一直使用正常,并且我也没有更新系统.在网上找到的解决方案如下:1export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
-试了一下,果然有用,但蛋疼的是此命令是一次性的,">
-<meta property="og:updated_time" content="2015-12-20T13:53:27.000Z">
+<meta property="og:description" content="由于没有喜欢的主题,最近决定将博客由Farbox平台重新转回Hexo,第一次搭建Hexo时是在Windows环境下,版本是2.0+.现在转到Mac,Hexo也升级到了3.0+.因此也遇到了一些问题,在此纪录一下.
+按照Hexo文档的建议,我使用nvm来下载Node.js.下载nvm时,Hexo文档给出的下载nvm的命令在我的电脑上不管用,我使用的是nvm文档中的命令:1curl -o- https">
+<meta property="og:image" content="http://7wy3vb.com1.z0.glb.clouddn.com/static/images/hexo_nodejs_1.png">
+<meta property="og:image" content="http://7wy3vb.com1.z0.glb.clouddn.com/static/images/hexo_nodejs_2.png">
+<meta property="og:updated_time" content="2015-12-24T06:28:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac中Terminal基础命令不可用(如ls command not found)的解决方案">
-<meta name="twitter:description" content="今天准备开始系统学习Mac命令行的使用,但一打开发现所有命令都无法使用了,连最基础的ls,touch都不行,非常奇怪,以前一直使用正常,并且我也没有更新系统.在网上找到的解决方案如下:1export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
-试了一下,果然有用,但蛋疼的是此命令是一次性的,">
+<meta name="twitter:title" content="Hexo搭建过程中Node.js的环境问题">
+<meta name="twitter:description" content="由于没有喜欢的主题,最近决定将博客由Farbox平台重新转回Hexo,第一次搭建Hexo时是在Windows环境下,版本是2.0+.现在转到Mac,Hexo也升级到了3.0+.因此也遇到了一些问题,在此纪录一下.
+按照Hexo文档的建议,我使用nvm来下载Node.js.下载nvm时,Hexo文档给出的下载nvm的命令在我的电脑上不管用,我使用的是nvm文档中的命令:1curl -o- https">
 
 
 
@@ -75,7 +77,7 @@
   };
 </script>
 
-  <title> Mac中Terminal基础命令不可用(如ls command not found)的解决方案 | 尹述迪的博客 </title>
+  <title> Hexo搭建过程中Node.js的环境问题 | 尹述迪的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +238,7 @@
             
             
               
-                Mac中Terminal基础命令不可用(如ls command not found)的解决方案
+                Hexo搭建过程中Node.js的环境问题
               
             
           </h1>
@@ -245,8 +247,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-15T18:25:36+08:00" content="2015-12-15">
-              2015-12-15
+            <time itemprop="dateCreated" datetime="2015-12-22T13:25:00+08:00" content="2015-12-22">
+              2015-12-22
             </time>
           </span>
 
@@ -255,8 +257,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac</span>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
                   </a>
                 </span>
 
@@ -271,8 +273,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/" itemprop="commentsCount"></span>
+                <a href="/2015/12/22/Hexo搭建过程中Node.js的环境问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/22/Hexo搭建过程中Node.js的环境问题/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -291,21 +293,15 @@
       
 
       
-        <span itemprop="articleBody"><p>今天准备开始系统学习Mac命令行的使用,但一打开发现所有命令都无法使用了,连最基础的<code>ls</code>,<code>touch</code>都不行,非常奇怪,以前一直使用正常,并且我也没有更新系统.在网上找到的解决方案如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin</span><br></pre></td></tr></table></figure></p>
-<p>试了一下,果然有用,但蛋疼的是此命令是一次性的,每次重启Terminal都需要重新输入一次.这时发现上面的命令在之前配置adb的环境变量时用过.猜想将这些路径配置到 <code>.bash_profile</code>就能持久性保存了.然后我重新输入上面的命令,然后在home目录下(可通过命令<code>cd ~</code>回到home)输入以下命令打开<code>.bash_profile</code>文件:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">touch</span> <span class="class">.bash_profile</span> #没有<span class="class">.bash_profile</span>文件时会为你创建</span><br><span class="line"><span class="tag">open</span> <span class="class">.bash_profile</span> #打开<span class="class">.bash_profile</span>文件</span><br></pre></td></tr></table></figure></p>
-<p>打开之后,如果文件是空的,那么将export那行命令复制进去保存即可,如果以前配置过,那么将那行命令等号右边的路径粘贴到文件中的等号右边即可.注意路径与路径中间要用冒号<code>:</code>隔开.然后保存.<br>保存之后不会立刻生效,需要重启Terminal或者输入以下命令:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> .bash_profile</span><br></pre></td></tr></table></figure></p>
-<p>修复了之后想知道具体的原因是什么,就去查了一下<code>.bash_profile</code>这个文件.<br>原来Unix系统下的环境变量由以下三个文件获得:</p>
-<ol>
-<li><code>/etc/profile</code> 系统全局变量</li>
-<li><code>/etc/bashrc</code> 系统配置文件</li>
-<li><code>~/.bash_profile</code> 用户的配置文件,~代码home目录</li>
-</ol>
-<p>前两个是系统级的文件,对所有用户生效,普通用户只可读,修改需要获取root权限.<code>.bash_profile</code>是每个用户的配置文件,并且,<strong><code>,bash_profile</code>中的内容会覆盖<code>profile</code>中的内容</strong>.<br>这也就是我的命令行突然无法使用的原因.在配置adb的环境变量时,由于没有<code>.bash_profile</code>文件,我便创建了一个.这时便将系统命令的环境变量覆盖了.<br>另外,可以用<code>${PATH}</code>来表示系统的环境变量,它里面包含的路径有:<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/<span class="keyword">bin</span><br><span class="line"></span>/usr/<span class="keyword">bin</span><br><span class="line"></span>/<span class="keyword">bin</span><br><span class="line"></span>/usr/sbin</span><br><span class="line">/sbin</span><br></pre></td></tr></table></figure></p>
-<p>这些内容可以在<code>/etc/paths</code>文件中查看到.</p>
-<h1 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h1><ul>
-<li><a href="http://yijiebuyi.com/blog/f2f8317f69a857b2b82ff9973031468e.html" target="_blank" rel="external">mac 如何设置全局变量$PATH</a></li>
-<li><a href="http://stackoverflow.com/questions/6751252/difference-between-profile-and-bash-profile-on-snow-leopard" target="_blank" rel="external">Difference between .profile and .bash_profile</a></li>
-</ul>
+        <span itemprop="articleBody"><p>由于没有喜欢的主题,最近决定将博客由<a href="www.farbox.com">Farbox</a>平台重新转回<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>,第一次搭建Hexo时是在Windows环境下,版本是2.0+.现在转到Mac,Hexo也升级到了3.0+.因此也遇到了一些问题,在此纪录一下.</p>
+<p>按照Hexo文档的建议,我使用nvm来下载Node.js.下载nvm时,Hexo文档给出的下载nvm的命令在我的电脑上不管用,我使用的是nvm文档中的命令:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -<span class="keyword">o</span>- http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/creationix/nvm/v0.<span class="number">29.0</span>/install.<span class="keyword">sh</span> | bash</span><br></pre></td></tr></table></figure></p>
+<p>除此之外,安装都很顺利,也能正常使用.但第二天重新打开的时候发现node,npm和hexo命令都无法使用了.<br>因为之前遇到过command not found的问题,我首先想到的是要配置PATH.<br>因此我google了一下node.js的安装目录,奇怪的是,网上给的目录在我的电脑上全都找不到.试遍了网上的方法均无效后,我在hexo群组里问了一下.原来,当你用nvm下载node.js时,node和npm的可执行文件都保存在nvm的目录里面,hexo文件也一样.因此路径和网上的都不同.另外,既然这里用了nvm,就没必要手动添加PATH了.直接使用nvm命令即可.<br>首先,列出node.js的版本:<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="keyword">ls</span></span><br></pre></td></tr></table></figure></p>
+<p>执行结果如下:<br><img title="未设置默认时的ls结果" class="class1" src="http://7wy3vb.com1.z0.glb.clouddn.com/static/images/hexo_nodejs_1.png"><br>如果这里出现nvm command not found的提示,那么打开你的.profile或.bash_profile文件,检查一下有没有下面这两句话:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"/Users/yourUsername/.nvm"</span></span><br><span class="line">[ <span class="operator">-s</span> <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; . <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span>  <span class="comment"># This loads nvm</span></span><br></pre></td></tr></table></figure></p>
+<p>没有就加上,记得将yourUsername替换成你自己的用户名</p>
+<p>在结果中可以看到你的node.js的版本号,如我的是4.2.3.然后执行以下命令:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use <span class="number">4.2</span><span class="number">.3</span> <span class="preprocessor">#将<span class="number">4.2</span><span class="number">.3</span>替换为你的版本号</span></span><br></pre></td></tr></table></figure></p>
+<p>执行完之后运行一下node命令,应该就能用了.<br>但这样是不够的,重启终端之后需要重新设置,因此我们要为nvm设置一下默认的使用版本.使用以下命令:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm alias <span class="keyword">default</span> <span class="number">4.2</span><span class="number">.3</span> <span class="preprocessor">#对应以上结果中的版本号</span></span><br></pre></td></tr></table></figure></p>
+<p>注意,一定要先执行use命令,以上命令才会生效,这也是我参考的文章中没写清楚的地方,当时卡在这好久,因为我use之后重启了终端,导致上面命令执行不成功.</p>
+<p>设置完之后再输入<code>nvm ls</code>,结果如下:<br><img title="未设置默认时的ls结果" class="class1" src="http://7wy3vb.com1.z0.glb.clouddn.com/static/images/hexo_nodejs_2.png"><br>如果有那行绿色的版本号,就表示设置成功了.<br>现在再运行node,npm和hexo命令试一下,应该就都正常了.<br>还有一点比较坑的就是,hexo3.0版本对markdown的检查更严格了,在表示标题的<code>#</code>后面一定要用空格与文字隔开,否则无效.另外,在Next主题中,代码块注明shell的话会导致行号异常,去掉就好了.不知道其他的是否一样.<br>折腾了一天终于回到了Hexo的怀抱,farbox还是发展得太慢了,还是自己折腾博客比较舒服,年轻人嘛,就是干.</p>
 </span>
       
     </div>
@@ -317,17 +313,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/10/AsyncTask使用中的那些坑/" rel="next" title="AsyncTask使用中的那些坑">
-                <i class="fa fa-chevron-left"></i> AsyncTask使用中的那些坑
+              <a href="/2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/" rel="next" title="Mac中Terminal基础命令不可用(如ls command not found)的解决方案">
+                <i class="fa fa-chevron-left"></i> Mac中Terminal基础命令不可用(如ls command not found)的解决方案
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/22/Hexo搭建过程中Node.js的环境问题/" rel="prev" title="Hexo搭建过程中Node.js的环境问题">
-                Hexo搭建过程中Node.js的环境问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -354,8 +346,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/"
-           data-title="Mac中Terminal基础命令不可用(如ls command not found)的解决方案" data-url="http://yinshudi.com/2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/">
+      <div class="ds-thread" data-thread-key="2015/12/22/Hexo搭建过程中Node.js的环境问题/"
+           data-title="Hexo搭建过程中Node.js的环境问题" data-url="http://yinshudi.com/2015/12/22/Hexo搭建过程中Node.js的环境问题/">
       </div>
     
   </div>
@@ -484,7 +476,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u53C2_u8003"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
