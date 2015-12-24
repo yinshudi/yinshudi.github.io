@@ -61,7 +61,7 @@
 按照Hexo文档的建议,我使用nvm来下载Node.js.下载nvm时,Hexo文档给出的下载nvm的命令在我的电脑上不管用,我使用的是nvm文档中的命令:1curl -o- https">
 <meta property="og:image" content="http://7wy3vb.com1.z0.glb.clouddn.com/static/images/hexo_nodejs_1.png">
 <meta property="og:image" content="http://7wy3vb.com1.z0.glb.clouddn.com/static/images/hexo_nodejs_2.png">
-<meta property="og:updated_time" content="2015-12-24T06:28:31.000Z">
+<meta property="og:updated_time" content="2015-12-24T06:32:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建过程中Node.js的环境问题">
 <meta name="twitter:description" content="由于没有喜欢的主题,最近决定将博客由Farbox平台重新转回Hexo,第一次搭建Hexo时是在Windows环境下,版本是2.0+.现在转到Mac,Hexo也升级到了3.0+.因此也遇到了一些问题,在此纪录一下.
@@ -301,7 +301,8 @@
 <p>在结果中可以看到你的node.js的版本号,如我的是4.2.3.然后执行以下命令:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use <span class="number">4.2</span><span class="number">.3</span> <span class="preprocessor">#将<span class="number">4.2</span><span class="number">.3</span>替换为你的版本号</span></span><br></pre></td></tr></table></figure></p>
 <p>执行完之后运行一下node命令,应该就能用了.<br>但这样是不够的,重启终端之后需要重新设置,因此我们要为nvm设置一下默认的使用版本.使用以下命令:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm alias <span class="keyword">default</span> <span class="number">4.2</span><span class="number">.3</span> <span class="preprocessor">#对应以上结果中的版本号</span></span><br></pre></td></tr></table></figure></p>
 <p>注意,一定要先执行use命令,以上命令才会生效,这也是我参考的文章中没写清楚的地方,当时卡在这好久,因为我use之后重启了终端,导致上面命令执行不成功.</p>
-<p>设置完之后再输入<code>nvm ls</code>,结果如下:<br><img title="未设置默认时的ls结果" class="class1" src="http://7wy3vb.com1.z0.glb.clouddn.com/static/images/hexo_nodejs_2.png"><br>如果有那行绿色的版本号,就表示设置成功了.<br>现在再运行node,npm和hexo命令试一下,应该就都正常了.<br>还有一点比较坑的就是,hexo3.0版本对markdown的检查更严格了,在表示标题的<code>#</code>后面一定要用空格与文字隔开,否则无效.另外,在Next主题中,代码块注明shell的话会导致行号异常,去掉就好了.不知道其他的是否一样.<br>折腾了一天终于回到了Hexo的怀抱,farbox还是发展得太慢了,还是自己折腾博客比较舒服,年轻人嘛,就是干.</p>
+<p>设置完之后再输入<code>nvm ls</code>,结果如下:<br><img title="已设置默认时的ls结果" class="class1" src="http://7wy3vb.com1.z0.glb.clouddn.com/static/images/hexo_nodejs_2.png"></p>
+<p>如果有那行绿色的版本号,就表示设置成功了.<br>现在再运行node,npm和hexo命令试一下,应该就都正常了.<br>还有一点比较坑的就是,hexo3.0版本对markdown的检查更严格了,在表示标题的<code>#</code>后面一定要用空格与文字隔开,否则无效.另外,在Next主题中,代码块注明shell的话会导致行号异常,去掉就好了.不知道其他的是否一样.<br>折腾了一天终于回到了Hexo的怀抱,farbox还是发展得太慢了,还是自己折腾博客比较舒服,年轻人嘛,就是干.</p>
 </span>
       
     </div>
