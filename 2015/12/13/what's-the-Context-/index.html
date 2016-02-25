@@ -51,19 +51,19 @@
 
 
 
-<meta name="description" content="今天准备开始系统学习Mac命令行的使用,但一打开发现所有命令都无法使用了,连最基础的ls,touch都不行,非常奇怪,以前一直使用正常,并且我也没有更新系统.在网上找到的解决方案如下:1export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
-试了一下,果然有用,但蛋疼的是此命令是一次性的,">
+<meta name="description" content="#原文地址 : Context,What Context?#引言Context可能是安卓程序中使用频率最高的元素,同时,也可能是被误用最多的元素.
+Context对象非常普遍,并会被频繁地传递,这会使你遇到一些未曾预料的问题.加载资源,启动一个新的Activity,获取一个系统服务,获取内部文件的路径以及新建View都需要使用Context来完成(而这些,也只是Context全部作用的冰山一角).">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac中Terminal基础命令不可用(如ls command not found)的解决方案">
-<meta property="og:url" content="http://yinshudi.com/2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/index.html">
+<meta property="og:title" content="【译】什么是Context?">
+<meta property="og:url" content="http://yinshudi.com/2015/12/13/what's-the-Context-/index.html">
 <meta property="og:site_name" content="尹述迪的博客">
-<meta property="og:description" content="今天准备开始系统学习Mac命令行的使用,但一打开发现所有命令都无法使用了,连最基础的ls,touch都不行,非常奇怪,以前一直使用正常,并且我也没有更新系统.在网上找到的解决方案如下:1export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
-试了一下,果然有用,但蛋疼的是此命令是一次性的,">
-<meta property="og:updated_time" content="2015-12-20T13:53:27.000Z">
+<meta property="og:description" content="#原文地址 : Context,What Context?#引言Context可能是安卓程序中使用频率最高的元素,同时,也可能是被误用最多的元素.
+Context对象非常普遍,并会被频繁地传递,这会使你遇到一些未曾预料的问题.加载资源,启动一个新的Activity,获取一个系统服务,获取内部文件的路径以及新建View都需要使用Context来完成(而这些,也只是Context全部作用的冰山一角).">
+<meta property="og:updated_time" content="2016-02-25T05:56:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac中Terminal基础命令不可用(如ls command not found)的解决方案">
-<meta name="twitter:description" content="今天准备开始系统学习Mac命令行的使用,但一打开发现所有命令都无法使用了,连最基础的ls,touch都不行,非常奇怪,以前一直使用正常,并且我也没有更新系统.在网上找到的解决方案如下:1export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
-试了一下,果然有用,但蛋疼的是此命令是一次性的,">
+<meta name="twitter:title" content="【译】什么是Context?">
+<meta name="twitter:description" content="#原文地址 : Context,What Context?#引言Context可能是安卓程序中使用频率最高的元素,同时,也可能是被误用最多的元素.
+Context对象非常普遍,并会被频繁地传递,这会使你遇到一些未曾预料的问题.加载资源,启动一个新的Activity,获取一个系统服务,获取内部文件的路径以及新建View都需要使用Context来完成(而这些,也只是Context全部作用的冰山一角).">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -74,7 +74,7 @@
   };
 </script>
 
-  <title> Mac中Terminal基础命令不可用(如ls command not found)的解决方案 | 尹述迪的博客 </title>
+  <title> 【译】什么是Context? | 尹述迪的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -235,7 +235,7 @@
             
             
               
-                Mac中Terminal基础命令不可用(如ls command not found)的解决方案
+                【译】什么是Context?
               
             
           </h1>
@@ -244,8 +244,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-15T18:25:36+08:00" content="2015-12-15">
-              2015-12-15
+            <time itemprop="dateCreated" datetime="2015-12-13T19:35:24+08:00" content="2015-12-13">
+              2015-12-13
             </time>
           </span>
 
@@ -254,8 +254,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -274,8 +274,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/" itemprop="commentsCount"></span>
+                <a href="/2015/12/13/what's-the-Context-/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/13/what's-the-Context-/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -294,21 +294,111 @@
       
 
       
-        <span itemprop="articleBody"><p>今天准备开始系统学习Mac命令行的使用,但一打开发现所有命令都无法使用了,连最基础的<code>ls</code>,<code>touch</code>都不行,非常奇怪,以前一直使用正常,并且我也没有更新系统.在网上找到的解决方案如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin</span><br></pre></td></tr></table></figure></p>
-<p>试了一下,果然有用,但蛋疼的是此命令是一次性的,每次重启Terminal都需要重新输入一次.这时发现上面的命令在之前配置adb的环境变量时用过.猜想将这些路径配置到 <code>.bash_profile</code>就能持久性保存了.然后我重新输入上面的命令,然后在home目录下(可通过命令<code>cd ~</code>回到home)输入以下命令打开<code>.bash_profile</code>文件:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">touch</span> <span class="class">.bash_profile</span> #没有<span class="class">.bash_profile</span>文件时会为你创建</span><br><span class="line"><span class="tag">open</span> <span class="class">.bash_profile</span> #打开<span class="class">.bash_profile</span>文件</span><br></pre></td></tr></table></figure></p>
-<p>打开之后,如果文件是空的,那么将export那行命令复制进去保存即可,如果以前配置过,那么将那行命令等号右边的路径粘贴到文件中的等号右边即可.注意路径与路径中间要用冒号<code>:</code>隔开.然后保存.<br>保存之后不会立刻生效,需要重启Terminal或者输入以下命令:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> .bash_profile</span><br></pre></td></tr></table></figure></p>
-<p>修复了之后想知道具体的原因是什么,就去查了一下<code>.bash_profile</code>这个文件.<br>原来Unix系统下的环境变量由以下三个文件获得:</p>
-<ol>
-<li><code>/etc/profile</code> 系统全局变量</li>
-<li><code>/etc/bashrc</code> 系统配置文件</li>
-<li><code>~/.bash_profile</code> 用户的配置文件,~代码home目录</li>
-</ol>
-<p>前两个是系统级的文件,对所有用户生效,普通用户只可读,修改需要获取root权限.<code>.bash_profile</code>是每个用户的配置文件,并且,<strong><code>,bash_profile</code>中的内容会覆盖<code>profile</code>中的内容</strong>.<br>这也就是我的命令行突然无法使用的原因.在配置adb的环境变量时,由于没有<code>.bash_profile</code>文件,我便创建了一个.这时便将系统命令的环境变量覆盖了.<br>另外,可以用<code>${PATH}</code>来表示系统的环境变量,它里面包含的路径有:<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/<span class="keyword">bin</span><br><span class="line"></span>/usr/<span class="keyword">bin</span><br><span class="line"></span>/<span class="keyword">bin</span><br><span class="line"></span>/usr/sbin</span><br><span class="line">/sbin</span><br></pre></td></tr></table></figure></p>
-<p>这些内容可以在<code>/etc/paths</code>文件中查看到.</p>
-<h1 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h1><ul>
-<li><a href="http://yijiebuyi.com/blog/f2f8317f69a857b2b82ff9973031468e.html" target="_blank" rel="external">mac 如何设置全局变量$PATH</a></li>
-<li><a href="http://stackoverflow.com/questions/6751252/difference-between-profile-and-bash-profile-on-snow-leopard" target="_blank" rel="external">Difference between .profile and .bash_profile</a></li>
-</ul>
+        <span itemprop="articleBody"><h2 id="23_u539F_u6587_u5730_u5740__3A_Context_2CWhat_Context_3F"><a href="#23_u539F_u6587_u5730_u5740__3A_Context_2CWhat_Context_3F" class="headerlink" title="#原文地址 : Context,What Context?"></a>#原文地址 : <a href="https://possiblemobile.com/2013/06/context/" target="_blank" rel="external">Context,What Context?</a></h2><p>#引言<br>Context可能是安卓程序中使用频率最高的元素,同时,也可能是被误用最多的元素.</p>
+<p>Context对象非常普遍,并会被频繁地传递,这会使你遇到一些未曾预料的问题.加载资源,启动一个新的Activity,获取一个系统服务,获取内部文件的路径以及新建View都需要使用Context来完成(而这些,也只是Context全部作用的冰山一角).关于Context如何工作,我有一些见解和建议,希望能使你在应用中更有效地使用它.</p>
+<hr>
+<p>#Context的类型<br>Context的实例并非完全相同.不同的组件,你能使用的Context也不同:</p>
+<p>##Application<br>Application 在你的应用中是单例的.在Activity或Service中,你可以通过方法<code>getApplication()</code>获取它.而在其他Context的子类中,这个方法叫做<code>getApplicationContext()</code>.但无论你从哪里获取到它,你获得的都是同一个实例.</p>
+<p>##Activity/Service<br>Activity/Service 继承自<code>ContextWrapper</code>. <code>ContextWrapper</code>实现了一些API.其所有方法都只是简单封装了其内部的一个Context实例的方法.任何时候,框架层创建一个新的Activity或Service实例,都会同时创建一个ContextImpl实例来承担所有繁重的代码并将其封装.无论是Activity,还是Service,抑或是他们相应的base context实例,都是一个独立的实例.</p>
+<p>##BroadcastReceiver<br>BroadcastReceiver本身并没有Context对象,但每次有广播事件时,系统会通过onReceive()方法传递一个Context给它.这是一个ReceiverRestrictedContext的实例,它有两个功能无法使用:registerReceiver()和bindService().这两个功能在现存的BroadcastReceiver.onReceive()中是被禁止的.广播接收器每次处理广播,传进来的Context对象都是新建的.</p>
+<p>##ContentProvider<br>ContentProvider 同样不是一个Context对象,但在其创建时框架层会传入一个Context对象,可以通过方法getContext()获得.如果ContentProvider与调用者运行在同一个地方(比如同一个应用进程),这个方法返回的便是同一个Application单例.然而,如果两者运行在不同进程,此方法便会新建一个实例,来表示提供者所运行的程序包.</p>
+<hr>
+<p>#持有引用<br>我们需要注意的第一个问题,是在一个对象或类中持有一个Context的引用时,他们的生命周期可能长于这个Context.例如,当你新建一个单例,可能需要一个Context对象来加载资源或使用ContentProvider,由此便会在此单例中持有一个当前Activity或Service的引用.</p>
+<p>##Bad Singleton<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CustomManager</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> CustomManager sInstance;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CustomManager <span class="title">getInstance</span>(<span class="params">Context context</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (sInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            sInstance = <span class="keyword">new</span> CustomManager(context);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> sInstance;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">private</span> Context mContext;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">CustomManager</span>(<span class="params">Context context</span>) </span>&#123;</span><br><span class="line">        mContext = context;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这段代码的问题在于我们并不知道这个Context从何而来,而持有一个Activity或Service的引用是不安全的.原因在于这个单例是由一个被封装起来的静态成员变量来管理的.这就意味着,这个对象和它关联的所有对象都不会被垃圾回收器回收.如果这个Context是一个Activity,那我们实际上将其所有view和其他潜在的与其关联的大对象保存在了内存中,由此便引发了内存泄露.</p>
+<p>为了避免这个问题,我们修改单例,让其引用一个application context:</p>
+<p>##Better Singleton<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CustomManager</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> CustomManager sInstance;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CustomManager <span class="title">getInstance</span>(<span class="params">Context context</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (sInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">//Always pass in the Application Context</span></span><br><span class="line">            sInstance = <span class="keyword">new</span> CustomManager(context.getApplicationContext());</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> sInstance;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">private</span> Context mContext;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">CustomManager</span>(<span class="params">Context context</span>) </span>&#123;</span><br><span class="line">        mContext = context;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在这个Context从哪来已经不重要了,因为我们引用的application context是绝对安全的.Application context本来就是一个单例,我们在静态引用它的过程中不必担心任何泄漏.同样,当你在一个正在运行的子线程或正在等待的Handler中引用Context时,这么做也是安全的.</p>
+<p>那么为什么我们不能在所有的地方都选择引用Application Context呢?为什么不能将中间的引用去掉,那我们就永远不用再担心内存泄露了?答案我在前面已经提到过了,那就是Context之间并不相同.</p>
+<hr>
+<p>#Context的功能<br>Context从何而来决定了你用它进行哪些操作是安全的.下面这个表格标明了一些会使用到Context的地方以及每种Context在这里是否可用.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">—</th>
+<th style="text-align:center">Application</th>
+<th style="text-align:center">Activity</th>
+<th style="text-align:center">Service</th>
+<th style="text-align:center">ContentProvider</th>
+<th style="text-align:center">BroadcastReceiver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Show a Dialog</td>
+<td style="text-align:center">NO</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO</td>
+<td style="text-align:center">NO</td>
+<td style="text-align:center">NO</td>
+</tr>
+<tr>
+<td style="text-align:center">Start an Activity</td>
+<td style="text-align:center">NO<a href="其实它们可以启动一个Activity,但需要启动一个新的实例.这可能适用于一些特殊情况,但会在你的应用中形成一个不标准的回退栈,因此这是不被推荐的或者说不是一个好的用法.">^1</a></td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO<a href="同1.">^2</a></td>
+<td style="text-align:center">NO<a href="同1.">^3</a></td>
+<td style="text-align:center">NO<a href="同1.">^4</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Layout Inflation</td>
+<td style="text-align:center">NO<a href="这实际上也是可以的,但实例化布局时会使用系统默认主题,而非你自己定义的.">^5</a></td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO<a href="同5.">^6</a></td>
+<td style="text-align:center">NO<a href="同5.">^7</a></td>
+<td style="text-align:center">NO<a href="同5.">^8</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Start a Service</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+</tr>
+<tr>
+<td style="text-align:center">Bind to a Service</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO</td>
+</tr>
+<tr>
+<td style="text-align:center">Send a Broadcast</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+</tr>
+<tr>
+<td style="text-align:center">Register BroadcastReceiver</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO[^9]</td>
+</tr>
+<tr>
+<td style="text-align:center">Load Resource Values</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+</tr>
+</tbody>
+</table>
+<p>[^9]:在Android4.2及以上的系统上,当receiver为null时,此操作是被允许的.这可以被用来获取一个sticky broadcast当前的值.</p>
+<hr>
+<p>#UI<br>从上面的表格可以看出,有些功能不适合使用application context来操作,这些功能都和UI有关(译者注:Toast可以用Application context).实际上,唯一一个可以处理所有UI任务的是Activity,其他Context都或多或少有不能使用的地方.</p>
+<p>幸运的是,这三个UI操作的使用范围都局限于Activity,Android框架似乎故意这样设计.如果你尝试用application去显示一个对话框或启动一个Activity,系统会直接抛出一个异常,来告诉你有地方出错了.</p>
+<p>而实例化布局时,问题就没那么明显了.如果你读过我上一篇关于布局实例化的文章,你就会知道这是一个有些神秘的过程.它有着一些隐秘的操作,而使用正确的Context关联着其中一个操作.当你使用application context去实例化布局时,框架层可不会有什么抱怨并返回一个完美的view层级给你,你的app里的theme和style也不会被使用.这是因为Activity是唯一一种你在清单文件定义过theme的context类型.其他类型的context会使用系统默认的theme来实例化view,这可能导致view显示异常.</p>
+<hr>
+<p>#结论</p>
+<p>一定会有人觉得很矛盾.当前的系统设计使我们必须保存一个长期的引用.另外,我们还必须保存一个Activity的引用,来完成一些更新UI的任务.在这种情况下,我强烈建议你重新思考你的设计来规避这种问题,这说不定会成为你与框架层斗智斗勇的典型案例.</p>
+<p>大多数情况下,直接使用当前所在组件的Context是可行的.只要一个对象没有超过这个组件的生命周期,你就能安全地持有这个Context.而一旦这个对象的生命周期超过了所在的Activity或Service,即便只是暂时地,你也应该选择使用application context.</p>
 </span>
       
     </div>
@@ -320,16 +410,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/13/what's-the-Context-/" rel="next" title="【译】什么是Context?">
-                <i class="fa fa-chevron-left"></i> 【译】什么是Context?
+              <a href="/2015/12/10/AsyncTask使用中的那些坑/" rel="next" title="AsyncTask使用中的那些坑">
+                <i class="fa fa-chevron-left"></i> AsyncTask使用中的那些坑
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/22/Hexo搭建过程中Node.js的环境问题/" rel="prev" title="Hexo搭建过程中Node.js的环境问题">
-                Hexo搭建过程中Node.js的环境问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/" rel="prev" title="Mac中Terminal基础命令不可用(如ls command not found)的解决方案">
+                Mac中Terminal基础命令不可用(如ls command not found)的解决方案 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -356,8 +446,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/"
-           data-title="Mac中Terminal基础命令不可用(如ls command not found)的解决方案" data-url="http://yinshudi.com/2015/12/15/Mac中Terminal基础命令不可用(如ls command not found)的解决方案/">
+      <div class="ds-thread" data-thread-key="2015/12/13/what's-the-Context-/"
+           data-title="【译】什么是Context?" data-url="http://yinshudi.com/2015/12/13/what's-the-Context-/">
       </div>
     
   </div>
@@ -486,7 +576,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u53C2_u8003"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#23_u539F_u6587_u5730_u5740__3A_Context_2CWhat_Context_3F"><span class="nav-number">1.</span> <span class="nav-text">#原文地址 : Context,What Context?</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
